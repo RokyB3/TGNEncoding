@@ -1,4 +1,5 @@
 import numpy as np
+import pickle
 
 from step import step_graph, StepConfig
 from ba_graphs import create_BA_graph
@@ -17,7 +18,7 @@ def create_tgn(ba_graph, step_config, iterations):
         "added_edges": set()
     }]
 
-    for i in range(iterations-1):
+    for _ in range(iterations-1):
         edges, new_nodes, removed_nodes, removed_edges, added_edges = step_graph(ba_graph, step_config)
         tgn.append({
             "edges": edges,
@@ -31,4 +32,12 @@ def create_tgn(ba_graph, step_config, iterations):
     return tgn
 
 
-print("tgn: ", create_tgn(ba_graph, step_config, 3))
+tgn = create_tgn(ba_graph, step_config, 3)
+
+with open("ba1.pkl", "wb") as f:
+    pickle.dump(tgn, f)
+
+with open("ba1.pkl", "rb") as f:
+    tgn = pickle.load(f)
+
+print("tgn: ", tgn)
