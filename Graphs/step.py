@@ -11,8 +11,11 @@ def step_graph(edges, step_config):
     # step_config: dictionary of configuration parameters
     # returns: updated edges, new nodes, removed_nodes, removed edges, added edges
     
+    # Convert same edges to edge in sorted node order
+    edges = list(set(tuple(sorted(edge)) for edge in edges))
+
     # Convert edges to numpy array if it's not already
-    edges = np.array(edges.copy())
+    edges = np.array(edges)
     
     # Find all nodes in the original graph
     if len(edges) > 0:
@@ -33,9 +36,6 @@ def step_graph(edges, step_config):
         remaining_nodes = set()
         current_nodes = max(original_nodes) + 1 if original_nodes else 0
     
-    # Identify completely disconnected nodes
-    removed_nodes = original_nodes - remaining_nodes
-    
     # Add new nodes
     new_nodes = range(current_nodes, current_nodes + step_config.n_add)
     
@@ -46,14 +46,20 @@ def step_graph(edges, step_config):
             if np.random.random() < step_config.p_add:
                 # Add edge in both directions (for undirected graph)
                 new_edges.append([new_node, existing_node])
-                new_edges.append([existing_node, new_node])
     
+
     # Convert new_edges to numpy array if it's not empty
     added_edges = np.array(new_edges) if new_edges else np.empty((0, 2), dtype=int)
     
     # Combine existing and new edges
     if len(added_edges) > 0:
         edges = np.vstack([edges, added_edges]) if len(edges) > 0 else added_edges
+
+    # Identify completely disconnected nodes
+    removed_nodes = original_nodes - set(edges.flatten())
+
+    # Convert edges to undirected graph
+    edges = np.vstack([edges, np.flip(edges, axis=1)])
     
     return edges, new_nodes, removed_nodes, removed_edges, added_edges
     
