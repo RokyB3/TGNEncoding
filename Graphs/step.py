@@ -12,7 +12,7 @@ def step_graph(edges, step_config):
     # returns: updated edges, new nodes, removed_nodes, removed edges, added edges
     
     # Convert same edges to edge in sorted node order
-    edges = list(set(tuple(sorted(edge)) for edge in edges))
+    # edges = list(set(tuple(sorted(edge)) for edge in edges))
 
     # Convert edges to numpy array if it's not already
     edges = np.array(edges)
@@ -59,7 +59,7 @@ def step_graph(edges, step_config):
     removed_nodes = original_nodes - set(edges.flatten())
 
     # Convert edges to undirected graph
-    edges = np.vstack([edges, np.flip(edges, axis=1)])
+    # edges = np.vstack([edges, np.flip(edges, axis=1)])
     
     return edges, new_nodes, removed_nodes, removed_edges, added_edges
     

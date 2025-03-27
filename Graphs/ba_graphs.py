@@ -16,7 +16,7 @@ def create_BA_graph(n, m):
             k_count[i] = i
             for j in range(i):
                 edges.append([i, j])
-                edges.append([j, i])
+                # edges.append([j, i])
                 k_count[j] += 1
         else:
             # Compute k_dist
@@ -29,7 +29,7 @@ def create_BA_graph(n, m):
             # Add edges
             for node in chosen_nodes:
                 edges.append([i, node])
-                edges.append([node, i])
+                # edges.append([node, i])
                 k_count[node] += 1
             k_count[i] = edges_to_add
             sum_k += 2*edges_to_add
