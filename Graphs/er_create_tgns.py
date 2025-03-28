@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 
 from er_step import step_graph, StepConfig
-from er_graphs import create_er_graphs
+from er_graphs import create_er_graph
 
 # Create initial ER graph (as edge list with 3 columns)
 def er_graph_to_array(graph, timestamp=0):
@@ -36,7 +36,7 @@ def create_er_tgn(initial_graph, step_config, iterations):
     return tgn
 
 
-er_graph = create_er_graphs(num_graphs=1, num_nodes=5, edge_prob=0.4)[0]
+er_graph = create_er_graph(num_nodes=5, edge_prob=0.4)
 
 step_config = StepConfig(n_add=2, p_add=0.5, p_remove=0.5)
 tgn = create_er_tgn(er_graph, step_config, iterations=3)
