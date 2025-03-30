@@ -1,8 +1,8 @@
 import numpy as np
 import pickle
 
-from step import step_graph, StepConfig
-from ba_graphs import create_BA_graph
+from Graphs.ba_step import step_graph, StepConfig
+from Graphs.ba_graphs import create_BA_graph
 
 ba_graph = create_BA_graph(5, 2)
 

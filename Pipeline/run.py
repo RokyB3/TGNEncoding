@@ -9,9 +9,9 @@ from pathlib import Path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import modules from other directories
-from Graphs.create_tgns import create_tgn
+from Graphs.ba_create_tgns import create_tgn
 from Graphs.ba_graphs import create_BA_graph
-from Graphs.step import StepConfig
+from Graphs.ba_step import StepConfig
 from Encoding.encoding1 import encoding1
 
 def main():
