@@ -1,15 +1,15 @@
 # to run encoding1 on ba1.pkl
 # write this in terminal: 
-# python Pipeline/run.py --encode --input ba1.pkl
+# python Pipeline/run1.py --encode --input ba1.pkl
 
 
 # to run encoding1 on complete1.pkl
 # write this in terminal: 
-# python Pipeline/run.py --encode --input complete1.pkl
+# python Pipeline/run1.py --encode --input complete1.pkl
 
 # to run encoding1 on er1.pkl
 # write this in terminal: 
-# python Pipeline/run.py --encode --input er1.pkl
+# python Pipeline/run1.py --encode --input er1.pkl
 
 
 #!/usr/bin/env python3

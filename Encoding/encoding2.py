@@ -1,4 +1,5 @@
-#Hybrid Encoding (Snapshot + Change Log)
+# Hybrid Encoding (Snapshot + Change Log)
+# Hybrid encoding balances both temporal and structural representation, making it ideal for LLM-based reasoning.
 import pickle
 
 def display_edges(edges):
