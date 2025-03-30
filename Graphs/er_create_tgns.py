@@ -39,7 +39,7 @@ def create_er_tgn(initial_graph, step_config, iterations):
 er_graph = create_er_graph(num_nodes=5, edge_prob=0.4)
 
 step_config = StepConfig(n_add=2, p_add=0.5, p_remove=0.5)
-tgn = create_er_tgn(er_graph, step_config, iterations=3)
+tgn = create_er_tgn(er_graph, step_config, iterations=6)
 
 with open("er1.pkl", "wb") as f:
     pickle.dump(tgn, f)

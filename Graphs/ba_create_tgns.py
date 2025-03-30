@@ -32,7 +32,7 @@ def create_tgn(ba_graph, step_config, iterations):
     return tgn
 
 
-tgn = create_tgn(ba_graph, step_config, 3)
+tgn = create_tgn(ba_graph, step_config, 6)
 
 with open("ba1.pkl", "wb") as f:
     pickle.dump(tgn, f)

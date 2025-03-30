@@ -37,7 +37,7 @@ def create_complete_tgn(initial_graph, step_config, iterations):
 complete_graph = create_complete_graph(num_nodes=5)
 step_config = StepConfig(n_add=2, p_add=0.5, p_remove=0.5)
 
-tgn = create_complete_tgn(complete_graph, step_config, iterations=3)
+tgn = create_complete_tgn(complete_graph, step_config, iterations=6)
 
 with open("complete1.pkl", "wb") as f:
     pickle.dump(tgn, f)
