@@ -1,0 +1,206 @@
+{
+  "ba1.pkl": {
+    "node_first_appearance": 1,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      0
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        1,
+        14
+      ]
+    ]
+  },
+  "ba2.pkl": {
+    "node_first_appearance": 2,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      2
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        8,
+        14
+      ]
+    ]
+  },
+  "ba3.pkl": {
+    "node_first_appearance": 1,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      0
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        5,
+        16
+      ],
+      [
+        1,
+        16
+      ],
+      [
+        10,
+        16
+      ]
+    ]
+  },
+  "ba4.pkl": {
+    "node_first_appearance": 0,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      0
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        0,
+        11
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        7,
+        11
+      ]
+    ]
+  },
+  "er1.pkl": {
+    "node_first_appearance": 2,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      0
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        3,
+        18
+      ]
+    ]
+  },
+  "er2.pkl": {
+    "node_first_appearance": 1,
+    "time_steps_most_connected": [
+      3,
+      4,
+      5
+    ],
+    "time_steps_least_connected": [
+      0,
+      1
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        7,
+        17
+      ]
+    ]
+  },
+  "er3.pkl": {
+    "node_first_appearance": 0,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      1,
+      2
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        9,
+        19
+      ]
+    ]
+  },
+  "er4.pkl": {
+    "node_first_appearance": 0,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      2
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        12,
+        20
+      ]
+    ]
+  },
+  "complete1.pkl": {
+    "node_first_appearance": 1,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      1
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        7,
+        16
+      ],
+      [
+        4,
+        16
+      ]
+    ]
+  },
+  "complete2.pkl": {
+    "node_first_appearance": 1,
+    "time_steps_most_connected": [
+      5
+    ],
+    "time_steps_least_connected": [
+      1
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        1,
+        18
+      ]
+    ]
+  },
+  "complete3.pkl": {
+    "node_first_appearance": 0,
+    "time_steps_most_connected": [
+      0
+    ],
+    "time_steps_least_connected": [
+      3
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        9,
+        29
+      ]
+    ]
+  },
+  "complete4.pkl": {
+    "node_first_appearance": 0,
+    "time_steps_most_connected": [
+      0
+    ],
+    "time_steps_least_connected": [
+      2
+    ],
+    "nodes_with_most_edge_changes": [
+      [
+        6,
+        20
+      ]
+    ]
+  }
+}
