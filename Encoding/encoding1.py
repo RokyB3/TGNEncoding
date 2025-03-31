@@ -1,3 +1,6 @@
+# Snapshot-Based Encoding
+# Describe the graph at each time step as a separate snapshot
+
 import pickle
 
 with open("ba1.pkl", "rb") as f:
