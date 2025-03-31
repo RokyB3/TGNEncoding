@@ -30,7 +30,7 @@ results = {}
 
 for file in graph_files:
     if not os.path.exists(file):
-        print(f"⚠️ File {file} not found. Skipping.")
+        print(f"File {file} not found. Skipping.")
         continue
 
     with open(file, "rb") as f:

@@ -13,7 +13,7 @@ graph_text = "The graph at time t=0 contains edges (A-B), (B-C)."
 question = "What was the graph structure at t=0?"
 
 response = client.chat.completions.create(
-    model="gpt-4-turbo",  # or "gpt-4" if using the older GPT-4
+    model="gpt-4-turbo",  
     messages=[
         {"role": "system", "content": "You are a helpful assistant that answers questions about temporal graphs."},
         {"role": "user", "content": f"{graph_text}\n\nQuestion: {question}"}
