@@ -1,7 +1,11 @@
 {
   "node_first_appearance": 0,
   "time_steps_most_connected": [
-    0
+    0,
+    1,
+    2,
+    3,
+    4
   ],
   "time_steps_least_connected": [
     5
@@ -9,7 +13,7 @@
   "nodes_with_most_edge_changes": [
     [
       0,
-      12
+      14
     ],
     [
       1,
@@ -40,11 +44,31 @@
       10
     ],
     [
+      8,
+      4
+    ],
+    [
       9,
       9
     ],
     [
       10,
+      8
+    ],
+    [
+      11,
+      4
+    ],
+    [
+      12,
+      8
+    ],
+    [
+      13,
+      6
+    ],
+    [
+      14,
       7
     ]
   ]

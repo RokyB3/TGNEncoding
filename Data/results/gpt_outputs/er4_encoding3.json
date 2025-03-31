@@ -1,11 +1,6 @@
 {
   "node_first_appearance": 0,
   "time_steps_most_connected": [
-    0,
-    1,
-    2,
-    3,
-    4,
     5
   ],
   "time_steps_least_connected": [

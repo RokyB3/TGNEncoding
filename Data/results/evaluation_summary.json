@@ -1,0 +1,326 @@
+[
+  {
+    "graph": "complete1",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "ba4",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.25
+  },
+  {
+    "graph": "ba3",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.25
+  },
+  {
+    "graph": "ba2",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "er1",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "ba2",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "ba3",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "ba4",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "er4",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.25
+  },
+  {
+    "graph": "complete2",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.25
+  },
+  {
+    "graph": "ba1",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "er3",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.25
+  },
+  {
+    "graph": "complete4",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "er2",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.6666666666666666,
+    "time_steps_least_connected": 0.5,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5416666666666666
+  },
+  {
+    "graph": "ba1",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "complete3",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "complete2",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "complete3",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.25
+  },
+  {
+    "graph": "er4",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "complete4",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.25
+  },
+  {
+    "graph": "er3",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "er2",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.3333333333333333,
+    "time_steps_least_connected": 0.5,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.4583333333333333
+  },
+  {
+    "graph": "ba1",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "er2",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.3333333333333333,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5833333333333333
+  },
+  {
+    "graph": "er3",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "complete4",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "er4",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "complete3",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "complete2",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "complete1",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.25
+  },
+  {
+    "graph": "er1",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "ba2",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 0.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "ba3",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 0.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.5
+  },
+  {
+    "graph": "er1",
+    "encoding": "3",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "complete1",
+    "encoding": "2",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.0,
+    "overall_accuracy": 0.75
+  },
+  {
+    "graph": "ba4",
+    "encoding": "1",
+    "node_first_appearance": 1,
+    "time_steps_most_connected": 1.0,
+    "time_steps_least_connected": 1.0,
+    "nodes_with_most_edge_changes": 0.3333333333333333,
+    "overall_accuracy": 0.8333333333333334
+  }
+]
