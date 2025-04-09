@@ -40,7 +40,7 @@ def main():
         if os.path.exists(file):
             encode_and_save(file, encoding3)
         else:
-            print(f"⚠️ File {file} not found. Skipping.")
+            print(f"File {file} not found. Skipping.")
 
 if __name__ == "__main__":
     main()
