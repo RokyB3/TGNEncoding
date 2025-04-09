@@ -4,23 +4,13 @@
     10
   ],
   "time_steps_least_connected": [
-    6
+    0
   ],
   "nodes_with_most_edge_changes": [
     [
-      1115,
-      108
+      1098,
+      66
     ]
   ],
-  "nodes_deleted_and_reappeared": [
-    1114,
-    1115,
-    1144,
-    1157,
-    1181,
-    1190,
-    1205,
-    1210,
-    1295
-  ]
+  "nodes_deleted_and_reappeared": []
 }

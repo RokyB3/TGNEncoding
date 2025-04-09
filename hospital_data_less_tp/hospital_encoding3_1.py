@@ -5,7 +5,7 @@ import pickle
 import numpy as np
 
 INPUT_FILE = "hospital.pkl"
-OUTPUT_FILE = "Data/embeddings/hospital_encoding3_textual.txt"
+OUTPUT_FILE = "Data/embeddings/hospital_encoding3_1.txt"
 
 def textual_adjacency_encoding(tgn):
     adjacency_history = {}

@@ -65,7 +65,7 @@ Please return your answers in **valid JSON format** exactly like this:
 
 # Config
 MODEL = "gpt-4o"
-HOSPITAL_NODE_QUERY = 1157
+HOSPITAL_NODE_QUERY = 1100
 
 def clean_response_markdown(content):
     if content.startswith("```json"):

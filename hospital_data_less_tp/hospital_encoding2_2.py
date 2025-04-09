@@ -5,13 +5,15 @@ import pickle
 import numpy as np
 
 INPUT_FILE = "hospital.pkl"
-OUTPUT_FILE = "Data/embeddings/hospital_encoding2_textual.txt"
+OUTPUT_FILE = "Data/embeddings/hospital_encoding2_2.txt"
 
 def display_nodes(nodes):
     return ", ".join(str(n) for n in sorted(nodes)) if nodes else "none"
 
 def display_edges(edges):
-    return ", ".join(f"{u}–{v}" for u, v in edges) if len(edges) > 0 else "none"
+    if isinstance(edges, np.ndarray):
+        edges = edges.tolist()
+    return ", ".join(f"({u}-{v})" for u, v in edges) if len(edges) > 0 else "none"
 
 def textual_hybrid_encoding(tgn):
     embedding = "Initial graph (t=0):\n"

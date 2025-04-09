@@ -5,18 +5,20 @@ import pickle
 import numpy as np
 
 INPUT_FILE = "hospital.pkl"
-OUTPUT_FILE = "Data/embeddings/hospital_encoding1_textual.txt"
+OUTPUT_FILE = "Data/embeddings/hospital_encoding1_2.txt"
 
 def textual_snapshot_encoding(tgn):
-    embedding = "This document summarizes the connections between individuals at each time step.\n\n"
+    embedding = "The following is a description of a temporal graph network encoded as a sequence of edges.\n"
+    
     for t, snapshot in enumerate(tgn):
         edges = snapshot["edges"]
         if len(edges) == 0:
-            embedding += f"Time {t}: No active contacts.\n"
+            embedding += f"The graph at time {t} contains no edges.\n"
         else:
-            connections = [f"{edge[0]}–{edge[1]}" for edge in edges]
-            conn_text = ", ".join(connections)
-            embedding += f"Time {t}: {conn_text}\n"
+            edge_strs = [f"({u} {v})" for u, v in edges]
+            edge_list = ", ".join(edge_strs)
+            embedding += f"The graph at time {t} contains the following edges: {edge_list}.\n"
+    
     return embedding
 
 def main():
@@ -41,3 +43,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

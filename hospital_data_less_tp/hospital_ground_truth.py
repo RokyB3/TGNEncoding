@@ -5,7 +5,7 @@ import json
 # === Config ===
 INPUT_FILE = "hospital.pkl"
 OUTPUT_FILE = "Data/results/ground_truth_hospital.json"
-NODE_QUERY = 1157  # Example node to track for appearance (can adjust)
+NODE_QUERY = 1100  # Example node to track for appearance (can adjust)
 
 # === Ground Truth Functions ===
 
