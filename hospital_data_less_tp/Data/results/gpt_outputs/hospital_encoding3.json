@@ -1,30 +1,25 @@
 {
-  "node_first_appearance": 9,
+  "node_first_appearance": 1,
   "time_steps_most_connected": [
-    9
+    10
   ],
   "time_steps_least_connected": [
-    40
+    0
   ],
   "nodes_with_most_edge_changes": [
     [
-      1144,
+      1109,
       108
     ]
   ],
   "nodes_deleted_and_reappeared": [
+    1109,
+    1114,
     1115,
-    1181,
+    1144,
     1190,
+    1193,
     1205,
-    1210,
-    1295,
-    1352,
-    1365,
-    1378,
-    1383,
-    1391,
-    1401,
-    1460
+    1295
   ]
 }

@@ -1,10 +1,12 @@
+# run_hospital_textual_gpt.py
+
 import os
 import json
 import openai
 from dotenv import load_dotenv
 import tiktoken
 
-# Load your OpenAI API key
+# Load OpenAI API key
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -14,26 +16,25 @@ OUTPUT_DIR = "Data/results/gpt_outputs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Token counter
-
 def count_tokens(text, model="gpt-4"):
     enc = tiktoken.encoding_for_model(model)
     return len(enc.encode(text))
 
-# Dataset context
+# Dataset description
 HOSPITAL_DATASET_DESCRIPTION = (
     "You are analyzing a dynamic contact network from a hospital in Lyon, France. "
     "It spans several days and records 20-second interval interactions among 46 health-care workers and 29 patients. "
     "Nodes represent people, and edges represent direct physical contact. The structure changes as people move and interact."
 )
 
-# Encoding descriptions
+# Encoding format descriptions
 ENCODING_DESCRIPTIONS = {
     "encoding1_textual": "Each time step lists all person-to-person contacts currently active. Every time step is independent and reflects a full snapshot.",
     "encoding2_textual": "This encoding gives a full snapshot at t=0 and describes changes afterwards: added/removed contacts or people.",
     "encoding3_textual": "For each person, it shows which other individuals they were connected to, when the connection began, and if it ended."
 }
 
-# Simplified and clear questions
+# Query prompt (simplified and JSON-formatted)
 QUESTION_PROMPT = """
 You are given a temporal contact graph. Please answer:
 
@@ -43,7 +44,7 @@ You are given a temporal contact graph. Please answer:
 4. Which node(s) changed the most — meaning they had the most added or removed contacts? List as (node, number of changes).
 5. Which node(s) left the network at some point and reappeared later?
 
-Respond in **valid JSON format** like:
+Respond in valid JSON like this:
 {{
   "node_first_appearance": <int or null>,
   "time_steps_most_connected": [<int>, ...],
@@ -53,12 +54,21 @@ Respond in **valid JSON format** like:
 }}
 """
 
-
 # Parameters
 MODEL = "gpt-4-turbo"
 HOSPITAL_NODE_QUERY = 1157
 
-# GPT query function
+# Clean GPT response
+def clean_response_markdown(raw):
+    if raw.startswith("```json"):
+        raw = raw[7:].strip()
+    elif raw.startswith("```"):
+        raw = raw[3:].strip()
+    if raw.endswith("```"):
+        raw = raw[:-3].strip()
+    return raw
+
+# GPT query logic
 def query_gpt(text, node_query, encoding_key):
     description = ENCODING_DESCRIPTIONS.get(encoding_key, "")
     full_prompt = (
@@ -78,13 +88,7 @@ def query_gpt(text, node_query, encoding_key):
             temperature=0
         )
         raw = response.choices[0].message.content.strip()
-        if raw.startswith("```json"):
-            raw = raw[7:].strip()
-        elif raw.startswith("```"):
-            raw = raw[3:].strip()
-        if raw.endswith("```"):
-            raw = raw[:-3].strip()
-
+        raw = clean_response_markdown(raw)
         return json.loads(raw)
     except json.JSONDecodeError:
         print("Could not parse GPT output as JSON.")
@@ -95,11 +99,11 @@ def query_gpt(text, node_query, encoding_key):
         return None
 
 # Main execution
-
 def main():
     for file in os.listdir(EMBEDDING_DIR):
-        if not file.startswith("hospital_encoding") or not file.endswith(".txt"):
+        if not file.endswith("_textual.txt"):
             continue
+
 
         filepath = os.path.join(EMBEDDING_DIR, file)
         encoding_key = file.replace(".txt", "")
@@ -121,13 +125,15 @@ def main():
 
         result = query_gpt(text, HOSPITAL_NODE_QUERY, encoding_key)
 
+        output_path = os.path.join(OUTPUT_DIR, f"{encoding_key}.json")
         if result:
-            output_path = os.path.join(OUTPUT_DIR, f"{encoding_key}.json")
             with open(output_path, "w") as f:
                 json.dump(result, f, indent=2)
             print(f"Saved GPT response to {output_path}")
         else:
             print(f"Failed to get result for {file}")
+            if not os.path.exists(output_path):
+                print(f"Warning: Output file was not created for {file}.")
 
 if __name__ == "__main__":
     main()

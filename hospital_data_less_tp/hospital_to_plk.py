@@ -6,8 +6,8 @@ import pickle
 # Load and process the hospital contact data
 df = pd.read_csv("contacts.dat", sep="\t", header=None, names=["time", "i", "j", "Si", "Sj"])
 
-# Bucket by 30-minute intervals (1800 seconds)
-df["time_bin"] = df["time"] // 1800
+# Bucket by 120-minute intervals (4*1800 seconds)
+df["time_bin"] = df["time"] // (4*1800)
 
 snapshots = []
 last_edges = set()

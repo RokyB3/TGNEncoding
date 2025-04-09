@@ -4,7 +4,7 @@ import openai
 import time
 from dotenv import load_dotenv
 
-# Load your OpenAI API key from .env file
+# Load OpenAI API key
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -13,11 +13,20 @@ EMBEDDING_DIR = "Data/embeddings"
 OUTPUT_DIR = "Data/results/gpt_outputs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Descriptions for the non-textual encodings
+# Detailed encoding descriptions
 ENCODING_DESCRIPTIONS = {
-    "encoding1": "This encoding describes the full graph at each time step as a list of edges.",
-    "encoding2": "This encoding begins with a full graph snapshot at t=0, followed by changes at each time step.",
-    "encoding3": "This encoding describes how each node's connections change over time, in a temporal adjacency list format."
+    "encoding1": """
+This encoding uses a snapshot-based format. Each time step lists all the edges currently present in the graph at that time. 
+You can track the structure of the graph across time steps to observe changes, node appearances, and connectivity.
+""",
+    "encoding2": """
+This is a hybrid encoding. It starts with a full snapshot at time step 0, and then lists changes (node/edge additions/removals) 
+at each following step. This allows tracking of how the graph evolves over time without repeating the entire structure each time.
+""",
+    "encoding3": """
+This encoding uses a temporal adjacency list. For each node, it lists neighbors and the time at which each connection (edge) was added, 
+and if applicable, when it was removed. This format is good for understanding how each node's connections change over time.
+"""
 }
 
 # Dataset context
@@ -27,21 +36,21 @@ It includes contacts between 46 healthcare workers and 29 patients across 20-sec
 Nodes represent people, and edges represent physical contact.
 """
 
-# Standard GPT question prompt
+# GPT question prompt (detailed)
 QUESTION_PROMPT = """
-You will be shown a temporal graph encoded as text. Analyze it and answer these questions:
+You will be shown a temporal graph encoded as text. This graph evolves over several discrete time steps. Please analyze it carefully and answer the following questions:
 
-1. At which time step does node {node} first appear in the graph? Return null if never.
+1. At which time step does node {node} first appear in the graph? If the node is never introduced, return null.
 
-2. At which time step(s) does the graph have the highest number of edges?
+2. At which time step(s) does the graph have the highest number of edges? You may count the number of edges described for each time step to determine this.
 
 3. At which time step(s) does the graph have the lowest number of edges?
 
-4. Which node(s) experience the most edge changes (added or removed)? Return a list of (node, number of changes) tuples.
+4. Which node(s) experience the most edge changes over time? Count how many times each node is involved in either an edge addition or an edge removal. Return the node(s) with the highest number of such changes and how many they had.
 
-5. Which node(s) were removed from the graph and later reappeared?
+5. Which node(s) were removed from the graph at some point and later reappeared?
 
-Return your answers in JSON like this:
+Please return your answers in **valid JSON format** exactly like this:
 {{
   "node_first_appearance": <int or null>,
   "time_steps_most_connected": [<int>, ...],
@@ -51,14 +60,12 @@ Return your answers in JSON like this:
 }}
 """
 
-# Node to track for question 1
+
+# Config
+MODEL = "gpt-4o"
 HOSPITAL_NODE_QUERY = 1157
 
-# GPT model
-MODEL = "gpt-4o"
-
 def clean_response_markdown(content):
-    """Strips GPT's markdown formatting from triple backticks."""
     if content.startswith("```json"):
         content = content[7:].strip()
     elif content.startswith("```"):
@@ -68,7 +75,6 @@ def clean_response_markdown(content):
     return content
 
 def query_gpt(text, node_query, encoding_type, max_retries=3, wait_time=10):
-    """Send query to GPT with retry logic for rate-limit errors."""
     encoding_info = ENCODING_DESCRIPTIONS.get(encoding_type, "")
     full_prompt = (
         HOSPITAL_DATASET_DESCRIPTION.strip()
@@ -114,9 +120,8 @@ def main():
     for file in os.listdir(EMBEDDING_DIR):
         if not file.endswith(".txt"):
             continue
-
         if "textual" in file or not any(enc in file for enc in ["encoding1", "encoding2", "encoding3"]):
-            continue  # Skip unrelated or textual files
+            continue  # Skip textual or unrelated
 
         filepath = os.path.join(EMBEDDING_DIR, file)
         with open(filepath, "r") as f:
