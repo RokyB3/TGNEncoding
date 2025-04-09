@@ -4,7 +4,6 @@
     10
   ],
   "time_steps_least_connected": [
-    16,
     6
   ],
   "nodes_with_most_edge_changes": [
@@ -19,7 +18,7 @@
     1144,
     1157,
     1181,
-    1193,
+    1190,
     1205,
     1210,
     1295
