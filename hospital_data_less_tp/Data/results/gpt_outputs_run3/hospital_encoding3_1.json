@@ -9,8 +9,15 @@
   "nodes_with_most_edge_changes": [
     [
       1098,
-      60
+      108
     ]
   ],
-  "nodes_deleted_and_reappeared": []
+  "nodes_deleted_and_reappeared": [
+    1109,
+    1114,
+    1115,
+    1149,
+    1196,
+    1295
+  ]
 }
